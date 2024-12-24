@@ -1,11 +1,11 @@
 
  import React from 'react'
 import { Text, Pressable, StyleSheet } from "react-native"
-export default function userbtn({ onPress, text, type="PRIMARY" }) {
+export default function userbtn({ onPress, text, type="PRIMARY", bgColor, fgColor}) {
  
     return( 
-     <Pressable onPress={onPress} style={[styles.container, styles[` container_${type}`]]}>
-        <Text style={[styles.text, styles[` text_${type}`]]}>{text}</Text> 
+     <Pressable onPress={onPress} style={[styles.container, styles[` container_${type}`], bgColor?{backgroundColor: bgColor}:{}]}>
+        <Text style={[styles.text, styles[` text_${type}`], fgColor?{color: fgColor}:{}]}>{text}</Text> 
     </Pressable>);
 }
 const styles = StyleSheet.create({
