@@ -40,10 +40,10 @@ export default function LoginScreen(  ) {
                 <UserGiris  placeholder="Kullanıcı Adı" value={username} setValue={setUsername} />
                 <UserGiris  placeholder="Şifre" value={passworld} setValue={setPassword} secureTextEntry />
                 <UserButton  text="Giriş Yap"  onPress={onSigInPressed} />
-                <View style={styles.action}> 
+                  
                     <UserButton    text="Şifre Unutum"  onPress={onForgetPasswordPressed }  type="TERTIARY"/>
                     <UserButton      text="Kayit Ol"  onPress={onSingUpPressed }  type="TERTIARY" />
-                </View>
+                
                 <SocialSinginButtons/>  
                  
              
@@ -70,11 +70,6 @@ const styles = StyleSheet.create({
          maxheight: 100 ,
          margin:50
     } ,
-    action: {
-    flexDirection: "row",
-    justifyContent: "space-between", // توزيع الأزرار بالتساوي
-    
-      
-  },
+   
      
 })
