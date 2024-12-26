@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react'
-import { Text, View, StyleSheet,Image,useWindowDimensions, ScrollView } from "react-native"
-import userbtn from "../components/userbtn" 
-import userinput from '../components/userinput';
-
+import { Text, View, StyleSheet,Image,useWindowDimensions, ScrollView } from "react-native";
+import userbtn from '../../components/userbtn ';
+import userbtn from "../../components/userbtn " ;
+import userinput from '../../components/userinput ';
+import userinput from '../../components/userinput '; 
 import userinput from '../components/userinput.js';
+import SocialSinginButtons from '../../components/SocialSinginButtons ';
 export default function Loginscreen({ navigation }) {
     const [username, setUsername] = useState("" );
     const [passworld, setPassword] = useState( "");
@@ -14,12 +16,7 @@ export default function Loginscreen({ navigation }) {
     const onForgetPasswordPressed=()=>{
         console.warn("onForgetPasswordPressed") 
      }
-     const onSigInGoogle=()=>{
-        console.warn("Google") 
-     } 
-     const onSigInApple=()=>{
-        console.warn(" Apple") 
-     }
+      
      const onSingUpPressed=()=>{
          console.warn( `onSingUpPressed`) 
      } 
@@ -33,8 +30,7 @@ export default function Loginscreen({ navigation }) {
             <userinput  placholder="Password" value={passworld} setValue={setPassword} secureTextEntry={true} />
             <userbtn  text="Giriş Yap"  onPress="onSigInPressed"  />
             <userbtn  text="Şifre Unutum"  onPress="onForgetPasswordPressed"  type="TERTIARY"/>
-            <userbtn  text="Google ile Giriş Yap"  onPress="onSigInGoogle" bgColor="#E7EAF4" fgColor="#DD4D44" />
-            <userbtn  text="Apple ile Giriş Yap"  onPress="onSigInApple" bgColor="#E7EAF4" fgColor="#4765A9" />
+             <SocialSinginButtons></SocialSinginButtons>
             <userbtn  text="Kayit Ol"  onPress="onSingUpPressed"   />
             </View>
         </ScrollView>

@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react'
 import { Text, View, StyleSheet , ScrollView } from "react-native"
-import userbtn from "../components/userbtn" 
-import userinput from '../components/userinput';
-
+import userbtn from "../../components/userbtn/index.js" 
+import userinput from '../../components/userinput/index.js';
+import SocialSinginButtons from '../../components/SocialSinginButtons/SocialSinginButtons.js';
 import userinput from '../components/userinput.js';
 const SignUpScreen = ( ) => {
     const [username, setUsername] = useState("" );
@@ -17,15 +17,17 @@ const SignUpScreen = ( ) => {
     const onForgetPasswordPressed=()=>{
         console.warn("onForgetPasswordPressed") 
      }
-     const onSigInGoogle=()=>{
-        console.warn("Google") 
-     } 
-     const onSigInApple=()=>{
-        console.warn(" Apple") 
-     }
+      
      const onSingUpPressed=()=>{
          console.warn( `onSingUpPressed`) 
      } 
+     const onTermOfUserPressed=()=>{
+        console.warn( `onTermOfUserPressed`);
+     }
+    } 
+    const onPrivacyPressed=()=>{
+       console.warn( `onPrivacyPressed`);
+    }
      
       
     return (
@@ -37,9 +39,9 @@ const SignUpScreen = ( ) => {
             <userinput  placholder="Password" value={Password} setValue={setPassword} secureTextEntry  />
             <userinput  placholder="Repeat Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry  />
             <userbtn  text="Kayit OL"  onPress="onRegisterPressed"  />
-            <Text style={styles.text1}>Kaydolarak, <Text style={styles.link}>Kullanım Şartlarımızı</Text>  ve <Text > Gizlilik Politikamızı </Text> kabul ettiğinizi onaylıyorsunuz </Text> 
-            <userbtn  text="Google ile Giriş Yap"  onPress="onSigInGoogle" bgColor="#E7EAF4" fgColor="#DD4D44" />
-            <userbtn  text="Apple ile Giriş Yap"  onPress="onSigInApple" bgColor="#E7EAF4" fgColor="#4765A9" />
+            <Text style={styles.text1}> onPress={onTermOfUserPressed}Kaydolarak, 
+            <Text style={styles.link}>  onPress={onPrivacyPressed}Kullanım Şartlarımızı{` `}</Text>ve{` `}<Text > Gizlilik Politikamızı </Text> kabul ettiğinizi onaylıyorsunuz </Text> 
+            <SocialSinginButtons></SocialSinginButtons>
             <userbtn  text="Kayit Ol"  onPress="onSingUpPressed"   />
             </View>
         </ScrollView>
@@ -54,13 +56,15 @@ const styles = StyleSheet.create({
          
         padding:20,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     },
     link: {
-        color:""
-
+        color:"#Fdb875"
+        
     },
     text: {
+       color:" gray",
+       marginVertical:10,
 
     },
     title: {
