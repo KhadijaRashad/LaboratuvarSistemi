@@ -1,8 +1,8 @@
 import React from 'react'; 
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Loginscreen from './screen/login'; 
+import login from './screen/login'; 
 import SignUpScreen from './screen/SignUpScreen ';
 const Stack = createStackNavigator();
 export default function App() {

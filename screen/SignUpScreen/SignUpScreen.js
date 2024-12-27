@@ -1,12 +1,10 @@
-
+import React from 'react';
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, ScrollView } from "react-native";
- 
-import userbtn from "../../components/userbtn ";
- 
-import userinput from '../../components/userinput ';
+import UserButton from '../../components/UserButton';
+import UserGiris from '../../components/UserGiris';  
 import SocialSinginButtons from '../../components/SocialSinginButtons ';
-import login from '../login';
+import login from '../../screen/login';  
 const navigation =useNavigation();
  
 const SignUpScreen = () => {
@@ -39,16 +37,16 @@ return (
         <View style={styles.view}>
             <Text style={styles.title}>Hesap Oluştur</Text>
               
-            <userinput placholder="Username" value={username} setValue={setUsername} />
-            <userinput placholder="Email" value={email} setValue={setEmail} />
-            <userinput placholder="Password" value={Password} setValue={setPassword} secureTextEntry />
-            <userinput placholder="Repeat Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry />
-            <userbtn text="Kayit OL" onPress="onRegisterPressed" />
+            <UserGiris placholder="Username" value={username} setValue={setUsername} />
+            <UserGiris placholder="Email" value={email} setValue={setEmail} />
+            <UserGiris placholder="Password" value={Password} setValue={setPassword} secureTextEntry />
+            <UserGiris placholder="Repeat Password" value={passwordRepeat} setValue={setPasswordRepeat} secureTextEntry />
+            <UserButton text="Kayit OL" onPress= {onRegisterPressed} />
             <Text style={styles.text1}> onPress={onTermOfUserPressed}Kaydolarak,
                 <Text style={styles.link}>  onPress={onPrivacyPressed}Kullanım Şartlarımızı{` `}</Text>ve{` `}<Text > Gizlilik Politikamızı </Text> kabul ettiğinizi onaylıyorsunuz </Text>
             <SocialSinginButtons></SocialSinginButtons>
              
-            <userbtn text="Hesapın varsa Giriş Yap" onPress="onSingInPressed" />
+            <UserButton text="Hesapın varsa Giriş Yap" onPress={ onSingInPressed} />
         </View>
     </ScrollView>
 

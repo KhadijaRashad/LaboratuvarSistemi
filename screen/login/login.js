@@ -1,10 +1,9 @@
-import React from 'react';
-
+import React from 'react'; 
 import React, { useState } from 'react'
 import {   View, StyleSheet ,useWindowDimensions, ScrollView } from "react-native";
 import { useNavigation} from '@react-navigation/native';
-import userbtn from '../../components/userbtn ';  
- 
+import UserButton from '../../components/UserButton';
+import UserGiris from '../../components/UserGiris'; 
 import SocialSinginButtons from '../../components/SocialSinginButtons ';
 export default function Loginscreen({ navigation }) {
     const [username, setUsername] = useState("" );
@@ -28,14 +27,16 @@ export default function Loginscreen({ navigation }) {
     const { height}=useWindowDimensions();
       
     return (
+        
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.view}>
-            <userinput  placholder="Username" value={username} setValue={setUsername} />
-            <userinput  placholder="Password" value={passworld} setValue={setPassword} secureTextEntry={true} />
-            <userbtn  text="Giriş Yap"  onPress="onSigInPressed"  />
-            <userbtn  text="Şifre Unutum"  onPress="onForgetPasswordPressed"  type="TERTIARY"/>
+            
+            <UserGiris  placholder="Username" value={username} setValue={setUsername} />
+            <UserGiris  placholder="Password" value={passworld} setValue={setPassword} secureTextEntry={true} />
+            <UserButton  text="Giriş Yap"  onPress={onSigInPressed} />
+            <UserButton  text="Şifre Unutum"  onPress={onForgetPasswordPressed }  type="TERTIARY"/>
              <SocialSinginButtons></SocialSinginButtons>
-            <userbtn  text="Kayit Ol"  onPress="onSingUpPressed"   />
+            <UserButton  text="Kayit Ol"  onPress={onSingUpPressed }   />
             </View>
         </ScrollView>
          
