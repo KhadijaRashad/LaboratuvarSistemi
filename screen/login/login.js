@@ -1,31 +1,35 @@
+import React from 'react';
 
 import React, { useState } from 'react'
-import { Text, View, StyleSheet,Image,useWindowDimensions, ScrollView } from "react-native";
-import userbtn from '../../components/userbtn ';
-import userbtn from "../../components/userbtn " ;
-import userinput from '../../components/userinput ';
-import userinput from '../../components/userinput '; 
-import userinput from '../components/userinput.js';
+import {   View, StyleSheet ,useWindowDimensions, ScrollView } from "react-native";
+import { useNavigation} from '@react-navigation/native';
+import userbtn from '../../components/userbtn ';  
+ 
 import SocialSinginButtons from '../../components/SocialSinginButtons ';
 export default function Loginscreen({ navigation }) {
     const [username, setUsername] = useState("" );
     const [passworld, setPassword] = useState( "");
+    const navigation =useNavigation();
     const onSigInPressed=()=>{
-       console.warn("Giriş Yap") 
+       //console.warn("Giriş Yap");
+       //volidote user
+       navigation.navigate('Home')
     }
     const onForgetPasswordPressed=()=>{
-        console.warn("onForgetPasswordPressed") 
+
+        //console.warn("onForgetPasswordPressed") 
+        navigation.navigate('login')
      }
       
      const onSingUpPressed=()=>{
-         console.warn( `onSingUpPressed`) 
+         //console.warn( `onSingUpPressed`) 
+         navigation.navigate('SignUpScreen')
      } 
     const { height}=useWindowDimensions();
       
     return (
         <ScrollView showsHorizontalScrollIndicator={false}>
             <View style={styles.view}>
-             
             <userinput  placholder="Username" value={username} setValue={setUsername} />
             <userinput  placholder="Password" value={passworld} setValue={setPassword} secureTextEntry={true} />
             <userbtn  text="Giriş Yap"  onPress="onSigInPressed"  />

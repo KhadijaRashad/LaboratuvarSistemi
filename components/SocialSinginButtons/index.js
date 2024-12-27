@@ -1,2 +1,3 @@
-export { default} from  '.SocialSinginButtons/SocialSinginButtons';
+  
+ export { default} from  '.SocialSinginButtons/SocialSinginButtons';
  
