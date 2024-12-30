@@ -13,23 +13,19 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.kh98ad.LaboratuvarSistemi"
+      "supportsTablet": true 
+       
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.kh98ad.LaboratuvarSistemi"
+      } 
+       
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "38db3224-fbbb-4367-b253-26add83b6f08"
-      }
-    }
+    } 
+     
   }
 }

@@ -1,5 +1,5 @@
  import React from 'react'
-import { Text, View, StyleSheet } from "react-native"
+ 
 import UserButton from '../../components/UserButton'; 
 export default function SocialSinginButtons(  ) {
     const onSigInGoogle=()=>{

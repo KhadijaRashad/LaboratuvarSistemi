@@ -10,13 +10,11 @@ export default function userbtn({ onPress, text, type="PRIMARY", bgColor, fgColo
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:"#3b71f3", 
+        
         width:  "100%" ,
-         padding:15,
-         
+        padding:15,
         justifyContent: "center",
         alignItems: "center",
-         
         marginVertical:5,
     },
     container_PRIMARY:{
@@ -24,6 +22,7 @@ const styles = StyleSheet.create({
 
     },
     container_TERTIARY:{
+          
 
     },
    text: {
