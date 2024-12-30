@@ -1,26 +1,22 @@
  
-import { StyleSheet, Text,View, SafeArray } from 'react-native';
+import { StyleSheet, Text,View, SafeAreaView} from 'react-native';
  
  import LoginScreen from './screen/LoginScreen';
 export default function App() {
   return (
-    <View    >
-
-       <LoginScreen  />
-       
-
-
-
-
-
-    </View>
+    <SafeAreaView style={styles.root}> 
+      <LoginScreen/>
+    </SafeAreaView>
+     
   );
 }
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor:  'red',
+    backgroundColor:  'white',
     alignItems: 'center',
     justifyContent: 'center',
+   //padding:30 ,
+    margin:20
   },
 });
