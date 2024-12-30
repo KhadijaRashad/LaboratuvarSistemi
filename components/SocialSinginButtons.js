@@ -1,6 +1,6 @@
  import React from 'react'
  
-import UserButton from '../../components/UserButton'; 
+import UserButton from './UserButton' 
 export default function SocialSinginButtons(  ) {
     const onSigInGoogle=()=>{
         console.warn("Google") 

@@ -1,11 +1,11 @@
  
 import { StyleSheet, Text,View, SafeAreaView} from 'react-native';
- 
+import SignUpScreen from './screen/SignUpScreen'; 
  import LoginScreen from './screen/LoginScreen';
 export default function App() {
   return (
     <SafeAreaView style={styles.root}> 
-      <LoginScreen/>
+      <SignUpScreen/>
     </SafeAreaView>
      
   );
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
    //padding:30 ,
-    margin:20
+    margin:10
   },
 });

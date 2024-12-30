@@ -4,7 +4,7 @@ import {   View, StyleSheet ,Image, useWindowDimensions, ScrollView  } from "rea
 import Logo from '../assets/Logo.png'
  import UserGiris from '../components/UserGiris'
 import  UserButton from '../components/UserButton'
-//import SocialSinginButtons from '../components/SocialSinginButtons';  
+import SocialSinginButtons from '../components/SocialSinginButtons';   
  
 export default function LoginScreen( ) {
     const { height}=useWindowDimensions(); 
@@ -22,12 +22,7 @@ export default function LoginScreen( ) {
       console.warn("onForgetPasswordPressed"); 
         //navigation.navigate('login')
     }
-    const onSigInGoogle=()=>{
-        console.warn("Google") 
-     } 
-     const onSigInApple=()=>{
-        console.warn(" Apple") 
-     }
+     
      const onSingUpPressed=()=>{
         console.warn("Giriş Yap");//مايطلع التحذير
         //volidote user
@@ -38,12 +33,11 @@ export default function LoginScreen( ) {
         <ScrollView> 
             <View style={styles.view}>
                 <Image source={Logo} style={[ styles.logo, {height:height * 0.3}]}resizeMode='contain'  />
-                <UserGiris  placholder="Username" value={username} setValue={setUsername} />
-                <UserGiris  placholder="Password" value={passworld} setValue={setPassword} secureTextEntry />
+                <UserGiris  placholder="Kullanıcı Adı" value={username} setValue={setUsername} />
+                <UserGiris  placeholder="Şifre" value={passworld} setValue={setPassword} secureTextEntry />
                 <UserButton  text="Giriş Yap"  onPress={onSigInPressed} />
                 <UserButton  text="Şifre Unutum"  onPress={onForgetPasswordPressed }  type="TERTIARY"/>
-                <UserButton  text="Google ile Giriş Yap"  onPress={ onSigInGoogle} bgColor="#FAE9EA" fgColor="#DD4D44" />
-                <UserButton  text="Apple ile Giriş Yap"  onPress={  onSigInApple}  bgColor="#E7EAF4" fgColor="#4765A9" /> 
+                <SocialSinginButtons/> 
                 <UserButton  text="Kayit Ol"  onPress={onSingUpPressed }  type="TERTIARY" />
              
             </View>
