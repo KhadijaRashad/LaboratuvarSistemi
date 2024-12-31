@@ -4,24 +4,26 @@ import { Text, View, StyleSheet, ScrollView } from "react-native";
 import UserButton from '../components/UserButton';
 import UserGiris from '../components/UserGiris';  
 import SocialSinginButtons from '../components/SocialSinginButtons'; 
+import { useNavigation } from '@react-navigation/native';
 //import login from '../../screen/login';  
 //const navigation =useNavigation();
  
-const SignUpScreen = () => {
+const SignUpScreen = ( ) => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState('');
     const [Password, setPassword] = useState("");
     const [passwordRepeat, setPasswordRepeat] = useState("");
-
+    const navigation =useNavigation();
     const onRegisterPressed = () => {
-        console.warn("onRegisterPressed")
+        //console.warn("onRegisterPressed")
+        navigation.navigate('Login')
         //حق الايميل
     };
      
 
     const onSingInPressed = () => {
         //console.warn(`onSingInPressed`)
-        navigation.navigate('login')
+        navigation.navigate('Login')
     };
     const onTermOfUserPressed = () => {
         console.warn(`onTermOfUserPressed`);
